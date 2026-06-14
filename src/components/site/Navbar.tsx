@@ -32,7 +32,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Growing Smiles home">
-          <img src={logoNavy.url} alt="Growing Smiles" className="h-9 w-auto sm:h-11" />
+          <img src={logoNavy.url} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
