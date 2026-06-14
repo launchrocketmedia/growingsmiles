@@ -481,24 +481,15 @@ function Home() {
                 src={fearFree.url}
                 alt="Comfortable, modern pediatric treatment room"
                 loading="lazy"
-                className="h-64 w-full rounded-[2rem] object-cover shadow-card md:h-72"
+                className="h-full w-full rounded-[2rem] object-cover shadow-card"
               />
             </Reveal>
             <Reveal delay={160}>
-              <div className="flex h-full flex-col justify-center rounded-[2rem] bg-[image:var(--gradient-primary)] p-7 text-white shadow-card">
-                <Sparkles className="h-8 w-8" />
-                <p className="mt-3 text-xl font-bold">Bright, calm & child-friendly</p>
-                <p className="mt-2 text-sm text-white/85">
-                  Every corner is thoughtfully designed to delight children and reassure parents.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={220}>
               <img
                 src={childCare.url}
                 alt="Warm, personalised care at Growing Smiles"
                 loading="lazy"
-                className="h-64 w-full rounded-[2rem] object-cover shadow-card md:h-72"
+                className="h-full w-full rounded-[2rem] object-cover shadow-card"
               />
             </Reveal>
           </div>

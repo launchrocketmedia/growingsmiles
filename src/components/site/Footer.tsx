@@ -17,7 +17,7 @@ export function Footer() {
       <div className="pointer-events-none absolute -top-10 left-1/2 h-40 w-[140%] -translate-x-1/2 rounded-[100%] bg-white/10 blur-2xl" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img src={logoColor.url} alt="Growing Smiles" className="h-14 w-auto" />
+          <p className="font-display text-2xl font-extrabold text-white">Growing Smiles</p>
           <p className="mt-4 max-w-xs text-sm text-white/80">
             Expert, fear-free pediatric dental care in a warm, welcoming environment in Powai,
             Mumbai — where every little smile grows with confidence.
