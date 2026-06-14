@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Clock, Star } from "lucide-react";
 import logoColor from "@/assets/logo-color.png.asset.json";
-import { BRAND, NAV_LINKS, waLink } from "@/lib/brand";
+import { BRAND, NAV_LINKS } from "@/lib/brand";
 
 const SERVICES = [
   "Infant Oral Care",
@@ -94,14 +94,6 @@ export function Footer() {
             >
               Book Appointment
             </Link>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-green px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-105"
-            >
-              WhatsApp
-            </a>
           </div>
         </div>
       </div>

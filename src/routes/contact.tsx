@@ -8,7 +8,23 @@ import { CloudField } from "@/components/site/Clouds";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { BRAND, waLink } from "@/lib/brand";
+
+const REASONS = [
+  "Routine Checkup & Cleaning",
+  "First Dental Visit",
+  "Tooth Pain / Emergency",
+  "Cavity / Filling",
+  "Braces / Orthodontics",
+  "Other",
+];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -92,6 +108,26 @@ function Contact() {
                 <Field label="Email" name="email" type="email" />
                 <Field label="Preferred Date" name="date" type="date" />
                 <Field label="Preferred Time" name="time" type="time" />
+              </div>
+              <div className="mt-4">
+                <Label htmlFor="reason" className="text-sm font-semibold text-navy">
+                  Reason for Visit
+                </Label>
+                <Select name="reason">
+                  <SelectTrigger
+                    id="reason"
+                    className="mt-1.5 h-11 rounded-xl border-border bg-background shadow-soft transition-colors hover:border-primary focus:ring-2 focus:ring-primary/40"
+                  >
+                    <SelectValue placeholder="Select a reason" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-xl">
+                    {REASONS.map((r) => (
+                      <SelectItem key={r} value={r} className="rounded-lg">
+                        {r}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div className="mt-4">
                 <Label htmlFor="message" className="text-sm font-semibold text-navy">
