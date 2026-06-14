@@ -452,49 +452,6 @@ function Home() {
         </div>
       </section>
 
-      {/* CLINIC EXPERIENCE */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-6">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <span className="inline-block rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary">
-              Clinic Experience
-            </span>
-            <h2 className="mt-4 text-3xl font-bold text-navy sm:text-4xl">
-              A Space Designed For Happy Smiles
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              Modern facilities, spotless hygiene and playful, child-friendly interiors that make
-              every visit feel safe and special.
-            </p>
-          </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            <Reveal className="md:row-span-2">
-              <img
-                src={community.url}
-                alt="Children enjoying their visit at Growing Smiles clinic"
-                loading="lazy"
-                className="h-full w-full rounded-[2rem] object-cover shadow-card"
-              />
-            </Reveal>
-            <Reveal delay={100} className="md:col-span-2">
-              <img
-                src={fearFree.url}
-                alt="Comfortable, modern pediatric treatment room"
-                loading="lazy"
-                className="h-full w-full rounded-[2rem] object-cover shadow-card"
-              />
-            </Reveal>
-            <Reveal delay={160}>
-              <img
-                src={childCare.url}
-                alt="Warm, personalised care at Growing Smiles"
-                loading="lazy"
-                className="h-full w-full rounded-[2rem] object-cover shadow-card"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* PATIENT JOURNEY */}
       <section className="py-16 sm:py-24">
