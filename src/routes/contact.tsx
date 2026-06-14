@@ -8,7 +8,23 @@ import { CloudField } from "@/components/site/Clouds";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { BRAND, waLink } from "@/lib/brand";
+
+const REASONS = [
+  "Routine Checkup & Cleaning",
+  "First Dental Visit",
+  "Tooth Pain / Emergency",
+  "Cavity / Filling",
+  "Braces / Orthodontics",
+  "Other",
+];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
