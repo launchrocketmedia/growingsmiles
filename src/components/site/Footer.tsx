@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Clock, Star } from "lucide-react";
 import logoColor from "@/assets/logo-color.png.asset.json";
-import { BRAND, NAV_LINKS, waLink } from "@/lib/brand";
+import { BRAND, NAV_LINKS } from "@/lib/brand";
 
 const SERVICES = [
   "Infant Oral Care",
