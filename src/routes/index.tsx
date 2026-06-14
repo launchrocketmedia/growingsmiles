@@ -36,6 +36,7 @@ import { Counter } from "@/components/site/Counter";
 import { CloudField } from "@/components/site/Clouds";
 import { BRAND, waLink } from "@/lib/brand";
 import drJyoti from "@/assets/dr-jyoti.png.asset.json";
+import drJyotiClinic from "@/assets/dr-jyoti-clinic.png.asset.json";
 import fearFree from "@/assets/fear-free.png.asset.json";
 import childCare from "@/assets/child-care.png.asset.json";
 import community from "@/assets/community.png.asset.json";
@@ -266,14 +267,33 @@ function Home() {
       {/* ABOUT */}
       <section id="about" className="scroll-mt-24 py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14">
-          <Reveal className="lg:col-span-5">
-            <div className="relative mx-auto max-w-sm">
-              <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] pt-6 shadow-card">
-                <img src={drJyoti.url} alt="Dr. Jyoti Magoo" loading="lazy" className="mx-auto w-full max-w-[18rem]" />
+          <div className="lg:col-span-5 space-y-6">
+            <Reveal>
+              <div className="relative mx-auto max-w-sm">
+                <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
+                <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
+                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { n: 10, s: "+", l: "Years of Care" },
+                  { n: 5000, s: "+", l: "Happy Smiles" },
+                  { n: 4.9, s: "★", l: "Avg. Rating", float: true },
+                ].map((stat) => (
+                  <div key={stat.l} className="rounded-2xl bg-card p-4 text-center shadow-soft">
+                    <p className="text-2xl font-extrabold text-primary sm:text-3xl">
+                      {stat.float ? "4.9" : <Counter to={stat.n} />}
+                      {stat.s}
+                    </p>
+                    <p className="mt-1 text-xs font-semibold text-muted-foreground">{stat.l}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
           <Reveal delay={120} className="lg:col-span-7">
             <span className="inline-block rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary">
               About the Doctor
@@ -296,21 +316,6 @@ function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {[
-                { n: 10, s: "+", l: "Years of Care" },
-                { n: 5000, s: "+", l: "Happy Smiles" },
-                { n: 4.9, s: "★", l: "Avg. Rating", float: true },
-              ].map((stat) => (
-                <div key={stat.l} className="rounded-2xl bg-card p-4 text-center shadow-soft">
-                  <p className="text-2xl font-extrabold text-primary sm:text-3xl">
-                    {stat.float ? "4.9" : <Counter to={stat.n} />}
-                    {stat.s}
-                  </p>
-                  <p className="mt-1 text-xs font-semibold text-muted-foreground">{stat.l}</p>
-                </div>
-              ))}
-            </div>
           </Reveal>
         </div>
       </section>
