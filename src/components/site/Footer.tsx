@@ -94,14 +94,6 @@ export function Footer() {
             >
               Book Appointment
             </Link>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-green px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-105"
-            >
-              WhatsApp
-            </a>
           </div>
         </div>
       </div>
