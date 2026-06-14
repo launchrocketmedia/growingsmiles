@@ -2,9 +2,9 @@ export const BRAND = {
   name: "Growing Smiles",
   full: "Growing Smiles Pediatric Dentistry by Dr. Jyoti Magoo",
   tagline: "Growing Healthy Smiles, One Child at a Time",
-  phoneDisplay: "+91 99999 99999",
-  phone: "+919999999999",
-  whatsapp: "919999999999",
+  phoneDisplay: "+91 93246 06474",
+  phone: "+919324606474",
+  whatsapp: "919324606474",
   email: "hello@growingsmiles.com",
   address:
     "Unit 220, Lake Primrose Commercial Complex, Panch Shrishti Complex Road, MHADA Colony 20, Powai, Mumbai, Maharashtra 400072",
