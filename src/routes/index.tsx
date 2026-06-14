@@ -267,30 +267,28 @@ function Home() {
       {/* ABOUT */}
       <section id="about" className="scroll-mt-24 py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5">
             <Reveal>
               <div className="relative mx-auto max-w-sm">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
                 <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
                   <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  { n: 10, s: "+", l: "Years of Care" },
-                  { n: 5000, s: "+", l: "Happy Smiles" },
-                  { n: 4.9, s: "★", l: "Avg. Rating", float: true },
-                ].map((stat) => (
-                  <div key={stat.l} className="rounded-2xl bg-card p-4 text-center shadow-soft">
-                    <p className="text-2xl font-extrabold text-primary sm:text-3xl">
-                      {stat.float ? "4.9" : <Counter to={stat.n} />}
-                      {stat.s}
-                    </p>
-                    <p className="mt-1 text-xs font-semibold text-muted-foreground">{stat.l}</p>
+                  <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2 sm:bottom-4 sm:left-4 sm:right-4 sm:gap-3">
+                    {[
+                      { n: 10, s: "+", l: "Years of Care" },
+                      { n: 5000, s: "+", l: "Happy Smiles" },
+                      { n: 4.9, s: "★", l: "Avg. Rating", float: true },
+                    ].map((stat) => (
+                      <div key={stat.l} className="rounded-xl bg-white/90 p-2 text-center shadow-soft backdrop-blur-sm sm:p-3">
+                        <p className="text-lg font-extrabold text-primary sm:text-2xl">
+                          {stat.float ? "4.9" : <Counter to={stat.n} />}
+                          {stat.s}
+                        </p>
+                        <p className="mt-0.5 text-[10px] font-semibold text-muted-foreground sm:text-xs">{stat.l}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </Reveal>
           </div>
