@@ -1,0 +1,123 @@
+import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
+import logoNavy from "@/assets/logo-navy.png.asset.json";
+import { NAV_LINKS } from "@/lib/brand";
+import { cn } from "@/lib/utils";
+
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-40 transition-all duration-300",
+        scrolled ? "glass shadow-soft" : "bg-transparent",
+      )}
+    >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="Growing Smiles home">
+          <img src={logoNavy.url} alt="Growing Smiles" className="h-9 w-auto sm:h-11" />
+        </Link>
+
+        <div className="hidden items-center gap-7 lg:flex">
+          {NAV_LINKS.map((l) => (
+            <Link
+              key={l.label}
+              to={l.to}
+              hash={l.hash || undefined}
+              className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+          >
+            Contact
+          </Link>
+        </div>
+
+        <div className="hidden lg:block">
+          <Link
+            to="/contact"
+            className="rounded-full bg-[image:var(--gradient-primary)] px-6 py-2.5 text-sm font-bold text-white shadow-soft transition-transform hover:scale-105"
+          >
+            Book Appointment
+          </Link>
+        </div>
+
+        <button
+          onClick={() => setOpen(true)}
+          className="rounded-full p-2 text-navy lg:hidden"
+          aria-label="Open menu"
+        >
+          <Menu className="h-7 w-7" />
+        </button>
+      </nav>
+
+      {/* Mobile full-screen menu */}
+      <div
+        className={cn(
+          "fixed inset-0 z-50 bg-[image:var(--gradient-sky)] transition-all duration-300 lg:hidden",
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+        )}
+      >
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+          <img src={logoNavy.url} alt="Growing Smiles" className="h-9 w-auto" />
+          <button
+            onClick={() => setOpen(false)}
+            className="rounded-full p-2 text-navy"
+            aria-label="Close menu"
+          >
+            <X className="h-7 w-7" />
+          </button>
+        </div>
+        <div className="flex flex-col items-center gap-6 pt-16">
+          {NAV_LINKS.map((l, i) => (
+            <Link
+              key={l.label}
+              to={l.to}
+              hash={l.hash || undefined}
+              onClick={() => setOpen(false)}
+              className="text-2xl font-bold text-navy"
+              style={{ animationDelay: `${i * 60}ms` }}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="text-2xl font-bold text-navy"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-4 rounded-full bg-[image:var(--gradient-primary)] px-8 py-3.5 text-lg font-bold text-white shadow-float"
+          >
+            Book Appointment
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
