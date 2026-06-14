@@ -77,16 +77,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Growing Smiles | Pediatric Dentistry by Dr. Jyoti Magoo, Powai" },
+      {
+        name: "description",
+        content:
+          "Growing Smiles offers expert, fear-free pediatric dental care in Powai, Mumbai. Gentle, child-friendly dentistry for healthy, confident smiles.",
+      },
+      { name: "author", content: "Growing Smiles Pediatric Dentistry" },
+      { name: "theme-color", content: "#7cc4e8" },
+      { property: "og:title", content: "Growing Smiles | Pediatric Dentistry by Dr. Jyoti Magoo" },
+      {
+        property: "og:description",
+        content:
+          "Expert, fear-free pediatric dental care in a warm, welcoming environment in Powai, Mumbai.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
