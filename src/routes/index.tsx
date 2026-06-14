@@ -506,8 +506,12 @@ function Home() {
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="w-[85%] shrink-0 snap-center rounded-3xl bg-card p-6 shadow-soft sm:w-[360px]"
+                className="relative w-[85%] shrink-0 snap-center rounded-3xl bg-card p-6 shadow-soft sm:w-[360px]"
               >
+                <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full bg-white px-2 py-1 shadow-soft">
+                  <GoogleG />
+                  <span className="text-[10px] font-bold text-navy">Google</span>
+                </div>
                 <Quote className="h-7 w-7 text-primary/30" />
                 <div className="mt-2 flex">
                   {[...Array(r.stars)].map((_, s) => (
