@@ -405,7 +405,10 @@ function Home() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {WHY.map((w, i) => (
               <Reveal key={w.title} delay={i * 60}>
-                <div className="group h-full rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
+                <div
+                  className="group h-full rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card animate-float"
+                  style={{ animationDelay: `${i * 0.7}s`, animationDuration: "6s" }}
+                >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-soft transition-transform group-hover:scale-110">
                     <w.icon className="h-6 w-6" />
                   </div>
