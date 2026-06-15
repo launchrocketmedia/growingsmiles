@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logoNavy from "@/assets/logo-navy.png.asset.json";
 import { NAV_LINKS } from "@/lib/brand";
@@ -8,6 +8,40 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  const scrollToHash = (hash: string) => {
+    const id = hash.replace("#", "");
+    if (!id) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleNav = (
+    e: React.MouseEvent,
+    to: string,
+    hash: string,
+  ) => {
+    // For in-page section links, handle scrolling manually so it works
+    // reliably on mobile and when already on the target route.
+    if (to === "/") {
+      e.preventDefault();
+      setOpen(false);
+      if (pathname === "/") {
+        scrollToHash(hash);
+      } else {
+        navigate({ to: "/" }).then(() => {
+          setTimeout(() => scrollToHash(hash), 100);
+        });
+      }
+    } else {
+      setOpen(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -41,6 +75,7 @@ export function Navbar() {
               key={l.label}
               to={l.to}
               hash={l.hash || undefined}
+              onClick={(e) => handleNav(e, l.to, l.hash)}
               className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
             >
               {l.label}
@@ -95,7 +130,7 @@ export function Navbar() {
               key={l.label}
               to={l.to}
               hash={l.hash || undefined}
-              onClick={() => setOpen(false)}
+              onClick={(e) => handleNav(e, l.to, l.hash)}
               className="text-2xl font-bold text-navy"
               style={{ animationDelay: `${i * 60}ms` }}
             >
