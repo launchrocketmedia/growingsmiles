@@ -67,7 +67,8 @@ export function Footer() {
 
       <div className="relative border-t border-white/15 px-5 py-6 sm:px-6">
         <p className="mx-auto max-w-7xl text-center text-xs font-medium tracking-wide text-white/70">
-          © 2026 Growing Smiles. All Rights Reserved.{" "}
+          © 2026 Growing Smiles. All Rights Reserved.
+          <br className="sm:hidden" />{" "}
           <a
             href="mailto:get.ayushdesigns@gmail.com"
             className="transition-colors hover:text-white"
