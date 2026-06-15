@@ -452,8 +452,15 @@ function Home() {
 
 
       {/* PATIENT JOURNEY */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-6">
+      <section className="relative overflow-hidden py-16 sm:py-24">
+        {/* Abstract background shapes */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-[8%] top-24 h-64 w-64 rounded-full bg-[image:var(--gradient-primary)] opacity-[0.07] blur-3xl" />
+          <div className="absolute right-[6%] top-1/2 h-72 w-72 rounded-full bg-teal/20 opacity-30 blur-3xl" />
+          <div className="absolute bottom-10 left-1/3 h-56 w-56 rounded-full bg-baby/30 opacity-30 blur-3xl" />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <Reveal className="mx-auto max-w-2xl text-center">
             <span className="inline-block rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary">
               Patient Journey
@@ -461,22 +468,65 @@ function Home() {
             <h2 className="mt-4 text-3xl font-bold text-navy sm:text-4xl">
               Your Child's Path to a Healthy Smile
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              A gentle, guided journey — every step designed around your child's comfort.
+            </p>
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {JOURNEY.map((j, i) => (
-              <Reveal key={j.title} delay={i * 80}>
-                <div className="relative h-full rounded-3xl bg-card p-5 text-center shadow-soft">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[image:var(--gradient-primary)] text-white shadow-soft">
-                    <j.icon className="h-6 w-6" />
-                  </div>
-                  <div className="mx-auto mt-3 w-fit rounded-full bg-secondary px-2.5 py-0.5 text-xs font-bold text-primary">
-                    Step {i + 1}
-                  </div>
-                  <h3 className="mt-2 text-base font-bold text-navy">{j.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{j.text}</p>
-                </div>
-              </Reveal>
-            ))}
+
+          <div className="relative mt-16">
+            {/* Flowing connector path (desktop) */}
+            <svg
+              className="pointer-events-none absolute left-0 top-0 hidden h-full w-full lg:block"
+              preserveAspectRatio="none"
+              viewBox="0 0 100 100"
+              aria-hidden="true"
+            >
+              <path
+                d="M30 6 C 75 14, 75 26, 30 34 C -15 42, -15 54, 30 62 C 75 70, 75 82, 30 90"
+                fill="none"
+                stroke="url(#journeyStroke)"
+                strokeWidth="0.45"
+                strokeDasharray="1.4 1.6"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="journeyStroke" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="oklch(0.74 0.13 230)" />
+                  <stop offset="100%" stopColor="oklch(0.78 0.1 195)" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div className="flex flex-col gap-8 sm:gap-10">
+              {JOURNEY.map((j, i) => {
+                const align = i % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto";
+                // staggered horizontal offsets for a flowing path
+                const shift = ["lg:ml-[8%]", "lg:mr-[4%]", "lg:ml-[2%]", "lg:mr-[6%]", "lg:ml-[14%]"][i] ?? "";
+                return (
+                  <Reveal key={j.title} delay={i * 90} className={`w-full lg:w-[52%] ${align} ${shift}`}>
+                    <div className="group relative animate-float rounded-3xl border border-white/60 bg-white/70 p-5 shadow-card backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-float sm:p-6" style={{ animationDelay: `${i * 0.6}s`, animationDuration: "7s" }}>
+                      <div className="flex items-start gap-4">
+                        <div className="relative shrink-0">
+                          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[image:var(--gradient-primary)] text-white shadow-soft transition-transform group-hover:scale-110">
+                            <j.icon className="h-7 w-7" />
+                          </div>
+                          <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-extrabold text-primary shadow-soft">
+                            {i + 1}
+                          </span>
+                        </div>
+                        <div className="min-w-0">
+                          <div className="inline-block rounded-full bg-secondary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
+                            Step {i + 1}
+                          </div>
+                          <h3 className="mt-2 text-lg font-bold text-navy">{j.title}</h3>
+                          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{j.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
