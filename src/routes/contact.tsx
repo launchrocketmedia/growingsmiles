@@ -326,12 +326,12 @@ function Contact() {
                 </div>
               ))}
             </div>
-            <div className="overflow-hidden rounded-2xl shadow-soft">
+            <div className="relative h-64 overflow-hidden rounded-2xl shadow-soft">
               <iframe
                 title="Growing Smiles location map"
                 src={mapSrc}
                 loading="lazy"
-                className="h-64 w-full border-0"
+                className="absolute inset-x-0 top-0 h-80 w-full border-0"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
