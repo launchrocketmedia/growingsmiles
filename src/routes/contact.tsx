@@ -369,11 +369,15 @@ function Field({
   name,
   type = "text",
   required,
+  error,
+  placeholder,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  error?: string;
+  placeholder?: string;
 }) {
   return (
     <div>
@@ -385,8 +389,10 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="mt-1.5 rounded-xl"
+        placeholder={placeholder}
+        className={cn("mt-1.5 rounded-xl", error && "border-destructive")}
       />
+      {error && <p className="mt-1 text-xs font-medium text-destructive">{error}</p>}
     </div>
   );
 }
