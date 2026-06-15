@@ -248,14 +248,14 @@ function Home() {
                 className="relative z-10 mx-auto w-full max-w-sm drop-shadow-2xl lg:max-w-md"
                 fetchPriority="high"
               />
-              <div className="glass absolute bottom-6 left-2 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:left-0">
+              <div className="glass absolute -bottom-3 left-0 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-left-2">
                 <Star className="h-5 w-5 fill-yellow text-yellow" />
                 <div>
                   <p className="text-sm font-bold leading-none text-navy">{BRAND.rating} Rating</p>
                   <p className="text-xs text-muted-foreground">Trusted by families</p>
                 </div>
               </div>
-              <div className="glass absolute right-2 top-10 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:right-0">
+              <div className="glass absolute bottom-12 right-0 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-right-2">
                 <Smile className="h-5 w-5 text-green" />
                 <p className="text-sm font-bold text-navy">Fear-Free Care</p>
               </div>
