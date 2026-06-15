@@ -130,7 +130,7 @@ export function Navbar() {
               key={l.label}
               to={l.to}
               hash={l.hash || undefined}
-              onClick={() => setOpen(false)}
+              onClick={(e) => handleNav(e, l.to, l.hash)}
               className="text-2xl font-bold text-navy"
               style={{ animationDelay: `${i * 60}ms` }}
             >
