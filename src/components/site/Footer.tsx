@@ -98,11 +98,16 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/15 px-5 py-6 text-center sm:px-6">
-        <p className="font-display text-lg font-semibold">{BRAND.tagline}</p>
-        <p className="mt-2 text-xs text-white/70">
-          © {new Date().getFullYear()} {BRAND.full}. All rights reserved.
-        </p>
+      <div className="relative border-t border-white/15 px-5 py-6 sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1.5 text-center sm:flex-row sm:gap-3">
+          <p className="text-xs font-medium tracking-wide text-white/80">
+            © {new Date().getFullYear()} {BRAND.name}. All Rights Reserved.
+          </p>
+          <span className="hidden h-1 w-1 rounded-full bg-white/30 sm:block" />
+          <p className="text-xs tracking-wide text-white/50">
+            Built by <span className="font-semibold text-white/75">Ayush</span>
+          </p>
+        </div>
       </div>
     </footer>
   );
