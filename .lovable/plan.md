@@ -1,20 +1,20 @@
-### 1. Hero Badge Floating Animations
-Add `animate-float` class to:
-- The **4.9 Rating** card (`glass` badge at bottom-left of hero image)
-- The **Fear-Free Care** card (`glass` badge at top-right of hero image)
+## Goal
+Make the footer look clean and professional. The current light sky-blue gradient reads as washed-out. Replace it with a polished deep-navy footer (on-brand) with crisp light text.
 
-Use staggered `animationDelay` values so the two badges float out of phase for a premium feel.
+## Changes
 
-### 2. Desktop Services Cards Floating Animation
-Add `animate-float` to each `ServiceCard` in the desktop grid (`sm:grid ...` at `lg:grid-cols-3 xl:grid-cols-4`).
-Apply staggered `animationDelay` based on card index (`i`) so the grid has a wave-like floating effect.
-Keep the mobile swipeable layout unchanged (no float there to avoid motion sickness on small screens).
+### 1. `src/styles.css`
+- Update `--gradient-footer` to a deep navy gradient using the brand navy, e.g.
+  `linear-gradient(165deg, oklch(0.30 0.06 255) 0%, oklch(0.24 0.05 258) 100%)`.
 
-### 3. Patient Journey SVG Line Cutout Fix
-The dashed connector path in the Patient Journey section uses `viewBox="0 0 100 100"`, but the path itself dips to `x=-15` at the step-3 curve. That negative feedback clipping on the left side in desktop view.
+### 2. `src/components/site/Footer.tsx`
+- Switch text colors from `text-[var(--color-navy)]` / `text-[var(--color-foreground)]/70` to light tokens: headings/links in white, body copy in `text-white/70`.
+- Update hover states to `hover:text-white`.
+- Change the top blur glow from `bg-[var(--color-navy)]/5` to `bg-white/10` for a subtle highlight on dark.
+- Change the bottom divider from `border-[var(--color-navy)]/10` to `border-white/15`.
+- Keep the logo; the existing logo should read fine on navy (verify after build, add subtle drop-shadow if needed).
+- Bottom line stays "© 2026 Growing Smiles. All Rights Reserved. Built By Ayush." with the mailto link, restyled for the dark background.
 
-Fix options:
-- **Option A (preferred):** Shift all path `x` coordinates rightward by 15 units so the entire path stays within `0–100` (e.g., change `-15` → `15`, `30` → `45`, `75` → `90`). Update `viewBox` to `"0 0 105 100"`.
-- **Option B:** Widen the `viewBox` to `"-20 0 120 100"` so negative `x` values are rendered.
-
-I recommend **Option A** — shifting the path keeps the SVG crisp and avoids any browser-specific clipping behavior at the viewBox edge.
+## Verification
+- Build compiles.
+- Screenshot the footer to confirm clean contrast and the logo is clearly visible on navy.
