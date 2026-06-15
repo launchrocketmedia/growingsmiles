@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
 import { Toaster, toast } from "sonner";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
@@ -8,6 +9,8 @@ import { CloudField } from "@/components/site/Clouds";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -15,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 import { BRAND, waLink } from "@/lib/brand";
 
 const REASONS = [
@@ -25,6 +29,33 @@ const REASONS = [
   "Braces / Orthodontics",
   "Other",
 ];
+
+// 10:00 AM – 7:00 PM, every 30 minutes (Mon–Sat only)
+const TIME_SLOTS = (() => {
+  const slots: string[] = [];
+  for (let h = 10; h <= 19; h++) {
+    for (const m of [0, 30]) {
+      if (h === 19 && m > 0) break; // stop at 7:00 PM
+      const date = new Date();
+      date.setHours(h, m, 0, 0);
+      slots.push(format(date, "h:mm a"));
+    }
+  }
+  return slots;
+})();
+
+// Phone: 10 digits, optionally prefixed with +91 (with optional space)
+const isValidPhone = (raw: string) =>
+  /^(\+91\s?)?[0-9]{10}$/.test(raw.trim());
+
+// Standard email, exclude example.com
+const isValidEmail = (raw: string) => {
+  const value = raw.trim();
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) return false;
+  const domain = value.split("@")[1]?.toLowerCase();
+  return domain !== "example.com";
+};
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
