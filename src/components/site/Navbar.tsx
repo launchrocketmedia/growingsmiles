@@ -75,6 +75,7 @@ export function Navbar() {
               key={l.label}
               to={l.to}
               hash={l.hash || undefined}
+              onClick={(e) => handleNav(e, l.to, l.hash)}
               className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
             >
               {l.label}
