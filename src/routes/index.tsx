@@ -670,12 +670,15 @@ function Home() {
 function ServiceCard({
   s,
   className = "",
+  style,
 }: {
   s: { icon: React.ElementType; title: string; text: string };
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <div
+      style={style}
       className={`group rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card ${className}`}
     >
       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary text-primary transition-colors group-hover:bg-[image:var(--gradient-primary)] group-hover:text-white">
