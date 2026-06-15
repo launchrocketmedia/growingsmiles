@@ -558,11 +558,11 @@ function Home() {
             </p>
           </Reveal>
 
-          <div className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="relative w-[85%] shrink-0 snap-center rounded-3xl bg-card p-6 shadow-soft sm:w-[360px]"
+                className="relative rounded-3xl bg-card p-6 shadow-soft"
               >
                 <div className="absolute right-4 top-4 flex items-center justify-center rounded-full bg-white p-1.5 shadow-soft">
                   <GoogleG />
