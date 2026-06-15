@@ -101,12 +101,15 @@ export function Footer() {
       <div className="relative border-t border-white/15 px-5 py-6 sm:px-6">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1.5 text-center sm:flex-row sm:gap-3">
           <p className="text-xs font-medium tracking-wide text-white/80">
-            © {new Date().getFullYear()} {BRAND.name}. All Rights Reserved.
+            © 2026 Growing Smiles. All Rights Reserved.
           </p>
           <span className="hidden h-1 w-1 rounded-full bg-white/30 sm:block" />
-          <p className="text-xs tracking-wide text-white/50">
+          <a
+            href="mailto:get.ayushdesigns@gmail.com"
+            className="text-xs tracking-wide text-white/50 transition-colors hover:text-white/80"
+          >
             Built by <span className="font-semibold text-white/75">Ayush</span>
-          </p>
+          </a>
         </div>
       </div>
     </footer>
