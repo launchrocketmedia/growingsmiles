@@ -255,7 +255,7 @@ function Home() {
                   <p className="text-xs text-muted-foreground">Trusted by families</p>
                 </div>
               </div>
-              <div className="glass absolute bottom-12 right-0 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-right-2">
+              <div className="glass absolute right-0 top-1/3 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card">
                 <Smile className="h-5 w-5 text-green" />
                 <p className="text-sm font-bold text-navy">Fear-Free Care</p>
               </div>
