@@ -128,6 +128,9 @@ const REVIEWS = [
   { name: "Aisha K.", text: "Best pediatric dentist in Powai. Gentle, professional and genuinely caring with kids.", stars: 5 },
   { name: "Neha D.", text: "From the playful interiors to the gentle treatment, everything is designed for children. Wonderful experience.", stars: 5 },
   { name: "Vikram J.", text: "Dr. Jyoti explained everything calmly and made my toddler comfortable. Truly fear-free dentistry.", stars: 5 },
+  { name: "Sneha P.", text: "My twins were nervous at first, but the friendly staff and Dr. Jyoti put them completely at ease. Fantastic care.", stars: 5 },
+  { name: "Arjun T.", text: "Spotless clinic, modern equipment and a doctor who genuinely loves working with kids. Couldn't ask for more.", stars: 5 },
+  { name: "Meera R.", text: "We drive across the city for our daughter's appointments — it's that worth it. Gentle, thorough and caring.", stars: 5 },
 ];
 
 const FAQS = [
