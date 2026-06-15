@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Growing Smiles" },
+      { title: "Lovable App" },
       {
         name: "description",
         content:
@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Growing Smiles Pediatric Dentistry" },
       { name: "theme-color", content: "#7cc4e8" },
-      { property: "og:title", content: "Growing Smiles" },
+      { property: "og:title", content: "Lovable App" },
       {
         property: "og:description",
         content:
@@ -93,12 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Growing Smiles" },
+      { name: "twitter:title", content: "Lovable App" },
       { name: "description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { property: "og:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { name: "twitter:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7b9124bc-0ed8-4819-a829-bbd5506c20f8/id-preview-525af78c--0b6e0572-7e68-4e8f-abfd-b133ea316cae.lovable.app-1781471259827.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7b9124bc-0ed8-4819-a829-bbd5506c20f8/id-preview-525af78c--0b6e0572-7e68-4e8f-abfd-b133ea316cae.lovable.app-1781471259827.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c04a8f2-cd84-4d29-828e-26ef699b74c9/id-preview-9af045dd--0b6e0572-7e68-4e8f-abfd-b133ea316cae.lovable.app-1781546739127.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c04a8f2-cd84-4d29-828e-26ef699b74c9/id-preview-9af045dd--0b6e0572-7e68-4e8f-abfd-b133ea316cae.lovable.app-1781546739127.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
