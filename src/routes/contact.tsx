@@ -85,13 +85,47 @@ const INFO = [
 
 function Contact() {
   const [submitting, setSubmitting] = useState(false);
+  const [date, setDate] = useState<Date | undefined>();
+  const [time, setTime] = useState<string>("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const phone = String(data.get("phone") || "");
+    const email = String(data.get("email") || "");
+
+    const next: Record<string, string> = {};
+
+    if (!isValidPhone(phone)) {
+      next.phone = "Enter a valid 10-digit number (e.g. 9876543210 or +91 9876543210).";
+    }
+    if (email && !isValidEmail(email)) {
+      next.email = "Enter a valid email like contact@domain.com.";
+    }
+    if (!date) {
+      next.date = "Please select a preferred date.";
+    } else if (date.getDay() === 0) {
+      next.date = "We're closed on Sundays. Please pick Monday–Saturday.";
+    }
+    if (!time) {
+      next.time = "Please select a preferred time.";
+    }
+
+    setErrors(next);
+    if (Object.keys(next).length > 0) {
+      toast.error("Please fix the highlighted fields.");
+      return;
+    }
+
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+      form.reset();
+      setDate(undefined);
+      setTime("");
+      setErrors({});
       toast.success("Thank you! We'll reach out shortly to confirm your appointment.");
     }, 700);
   };
@@ -126,6 +160,7 @@ function Contact() {
           <Reveal>
             <form
               onSubmit={onSubmit}
+              noValidate
               className="rounded-[2rem] bg-card p-6 shadow-card sm:p-8"
             >
               <h2 className="text-2xl font-bold text-navy">Appointment Request</h2>
@@ -135,11 +170,98 @@ function Contact() {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <Field label="Parent Name" name="parentName" required />
                 <Field label="Child Name" name="childName" required />
-                <Field label="Phone Number" name="phone" type="tel" required />
-                <Field label="Email" name="email" type="email" />
-                <Field label="Preferred Date" name="date" type="date" />
-                <Field label="Preferred Time" name="time" type="time" />
+                <Field
+                  label="Phone Number"
+                  name="phone"
+                  type="tel"
+                  required
+                  error={errors.phone}
+                  placeholder="+91 9876543210"
+                />
+                <Field
+                  label="Email"
+                  name="email"
+                  type="email"
+                  error={errors.email}
+                  placeholder="contact@domain.com"
+                />
+
+                {/* Preferred Date */}
+                <div>
+                  <Label className="text-sm font-semibold text-navy">
+                    Preferred Date <span className="text-destructive">*</span>
+                  </Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <button
+                        type="button"
+                        className={cn(
+                          "mt-1.5 flex h-11 w-full items-center gap-2 rounded-xl border border-border bg-background px-3 text-left text-sm shadow-soft transition-colors hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40",
+                          !date && "text-muted-foreground",
+                          errors.date && "border-destructive",
+                        )}
+                      >
+                        <CalendarIcon className="h-4 w-4 text-primary" />
+                        {date ? format(date, "EEE, MMM d, yyyy") : "Select a date"}
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={(d) => {
+                          setDate(d);
+                          setErrors((prev) => ({ ...prev, date: "" }));
+                        }}
+                        disabled={(d) =>
+                          d < new Date(new Date().setHours(0, 0, 0, 0)) || d.getDay() === 0
+                        }
+                        initialFocus
+                        className={cn("p-3 pointer-events-auto")}
+                      />
+                    </PopoverContent>
+                  </Popover>
+                  {errors.date && (
+                    <p className="mt-1 text-xs font-medium text-destructive">{errors.date}</p>
+                  )}
+                </div>
+
+                {/* Preferred Time */}
+                <div>
+                  <Label htmlFor="time" className="text-sm font-semibold text-navy">
+                    Preferred Time <span className="text-destructive">*</span>
+                  </Label>
+                  <Select
+                    value={time}
+                    onValueChange={(v) => {
+                      setTime(v);
+                      setErrors((prev) => ({ ...prev, time: "" }));
+                    }}
+                  >
+                    <SelectTrigger
+                      id="time"
+                      className={cn(
+                        "mt-1.5 h-11 rounded-xl border-border bg-background shadow-soft transition-colors hover:border-primary focus:ring-2 focus:ring-primary/40",
+                        errors.time && "border-destructive",
+                      )}
+                    >
+                      <SelectValue placeholder="Select a time" />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-xl">
+                      {TIME_SLOTS.map((t) => (
+                        <SelectItem key={t} value={t} className="rounded-lg">
+                          {t}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.time && (
+                    <p className="mt-1 text-xs font-medium text-destructive">{errors.time}</p>
+                  )}
+                  <p className="mt-1 text-xs text-muted-foreground">Mon–Sat, 10:00 AM – 7:00 PM</p>
+                </div>
               </div>
+
               <div className="mt-4">
                 <Label htmlFor="reason" className="text-sm font-semibold text-navy">
                   Reason for Visit
