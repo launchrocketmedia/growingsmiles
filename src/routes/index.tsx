@@ -248,14 +248,14 @@ function Home() {
                 className="relative z-10 mx-auto w-full max-w-sm drop-shadow-2xl lg:max-w-md"
                 fetchPriority="high"
               />
-              <div className="glass absolute -bottom-3 left-0 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-left-2">
+              <div className="glass absolute -bottom-3 left-0 z-20 flex animate-float items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-left-2" style={{ animationDuration: "6s" }}>
                 <Star className="h-5 w-5 fill-yellow text-yellow" />
                 <div>
                   <p className="text-sm font-bold leading-none text-navy">{BRAND.rating} Rating</p>
                   <p className="text-xs text-muted-foreground">Trusted by families</p>
                 </div>
               </div>
-              <div className="glass absolute right-0 top-1/3 z-20 flex items-center gap-2 rounded-2xl px-4 py-3 shadow-card">
+              <div className="glass absolute right-0 top-1/3 z-20 flex animate-float items-center gap-2 rounded-2xl px-4 py-3 shadow-card" style={{ animationDelay: "1.5s", animationDuration: "6s" }}>
                 <Smile className="h-5 w-5 text-green" />
                 <p className="text-sm font-bold text-navy">Fear-Free Care</p>
               </div>
@@ -446,7 +446,7 @@ function Home() {
           <div className="mt-10 hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={(i % 4) * 60}>
-                <ServiceCard s={s} className="h-full" />
+                <ServiceCard s={s} className="h-full animate-float" style={{ animationDelay: `${(i % 4) * 0.5}s`, animationDuration: "6s" }} />
               </Reveal>
             ))}
           </div>
@@ -481,11 +481,11 @@ function Home() {
             <svg
               className="pointer-events-none absolute left-0 top-0 hidden h-full w-full lg:block"
               preserveAspectRatio="none"
-              viewBox="0 0 100 100"
+              viewBox="0 0 105 100"
               aria-hidden="true"
             >
               <path
-                d="M30 6 C 75 14, 75 26, 30 34 C -15 42, -15 54, 30 62 C 75 70, 75 82, 30 90"
+                d="M45 6 C 90 14, 90 26, 45 34 C 0 42, 0 54, 45 62 C 90 70, 90 82, 45 90"
                 fill="none"
                 stroke="url(#journeyStroke)"
                 strokeWidth="0.45"
