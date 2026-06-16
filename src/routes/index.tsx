@@ -170,7 +170,8 @@ function StoryRow({
             src={img}
             alt={alt}
             loading="lazy"
-            className="relative w-full rounded-[2rem] object-cover shadow-card"
+            className="relative w-full rounded-[2rem] object-cover shadow-card animate-float"
+            style={{ animationDuration: "6s" }}
           />
         </div>
       </Reveal>
@@ -275,7 +276,7 @@ function Home() {
               <div className="relative mx-auto max-w-sm pb-14 sm:pb-16">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
                 <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
-                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
+                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full animate-float" style={{ animationDuration: "6s" }} />
                 </div>
                 <div className="absolute -bottom-2 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
                   {[
