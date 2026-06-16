@@ -562,7 +562,7 @@ function Home() {
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="relative rounded-3xl bg-card p-6 shadow-soft"
+                className="relative rounded-3xl bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-float"
               >
                 <div className="absolute right-4 top-4 flex items-center justify-center rounded-full bg-white p-1.5 shadow-soft">
                   <GoogleG />

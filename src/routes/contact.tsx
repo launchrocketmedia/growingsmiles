@@ -309,7 +309,7 @@ function Contact() {
           <Reveal delay={120} className="space-y-5">
             <div className="grid gap-4 sm:grid-cols-2">
               {INFO.map((i) => (
-                <div key={i.label} className="rounded-2xl bg-card p-5 shadow-soft">
+                <div key={i.label} className="rounded-2xl bg-card p-5 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-float">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-white">
                     <i.icon className="h-5 w-5" />
                   </div>

@@ -17,9 +17,9 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">404 — Growing Smiles</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          Oops! The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "Growing Smiles — Pediatric Dentistry in Powai, Mumbai" },
       {
         name: "description",
         content:
@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Growing Smiles Pediatric Dentistry" },
       { name: "theme-color", content: "#7cc4e8" },
-      { property: "og:title", content: "Lovable App" },
+      { property: "og:title", content: "Growing Smiles — Pediatric Dentistry in Powai, Mumbai" },
       {
         property: "og:description",
         content:
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Growing Smiles — Pediatric Dentistry in Powai, Mumbai" },
       { name: "description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { property: "og:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { name: "twitter:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
@@ -111,6 +111,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
