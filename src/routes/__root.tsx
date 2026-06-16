@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Growing Smiles Pediatric Dentistry" },
       { name: "theme-color", content: "#7cc4e8" },
-      { property: "og:title", content: "Lovable App" },
+      { property: "og:title", content: "Growing Smiles — Pediatric Dentistry in Powai, Mumbai" },
       {
         property: "og:description",
         content:
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Growing Smiles — Pediatric Dentistry in Powai, Mumbai" },
       { name: "description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { property: "og:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
       { name: "twitter:description", content: "A premium pediatric dentistry website for Growing Smiles by Dr. Jyoti Magoo." },
