@@ -170,7 +170,8 @@ function StoryRow({
             src={img}
             alt={alt}
             loading="lazy"
-            className="relative w-full rounded-[2rem] object-cover shadow-card"
+            className="relative w-full rounded-[2rem] object-cover shadow-card animate-float"
+            style={{ animationDuration: "6s" }}
           />
         </div>
       </Reveal>
@@ -275,7 +276,7 @@ function Home() {
               <div className="relative mx-auto max-w-sm pb-14 sm:pb-16">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
                 <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
-                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
+                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full animate-float" style={{ animationDuration: "6s" }} />
                 </div>
                 <div className="absolute -bottom-2 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
                   {[
@@ -641,7 +642,7 @@ function Home() {
       {/* CTA */}
       <section className="px-5 pb-8 sm:px-6">
         <Reveal className="mx-auto max-w-5xl">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-primary)] px-6 py-14 text-center text-white shadow-float sm:px-12">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-primary)] px-6 py-14 text-center text-white shadow-float transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-float sm:px-12">
             <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
             <h2 className="relative text-3xl font-bold sm:text-4xl">
               Ready to Grow a Healthy Smile?
@@ -652,13 +653,13 @@ function Home() {
             <div className="relative mt-7 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-transform hover:scale-105"
+                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 Book Appointment
               </Link>
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-transform hover:scale-105"
+                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 <PhoneIcon className="h-5 w-5" /> Call Now
               </a>
