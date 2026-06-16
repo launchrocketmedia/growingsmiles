@@ -641,7 +641,7 @@ function Home() {
       {/* CTA */}
       <section className="px-5 pb-8 sm:px-6">
         <Reveal className="mx-auto max-w-5xl">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-primary)] px-6 py-14 text-center text-white shadow-float sm:px-12">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-primary)] px-6 py-14 text-center text-white shadow-float transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-float sm:px-12">
             <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
             <h2 className="relative text-3xl font-bold sm:text-4xl">
               Ready to Grow a Healthy Smile?
@@ -652,13 +652,13 @@ function Home() {
             <div className="relative mt-7 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-transform hover:scale-105"
+                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 Book Appointment
               </Link>
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-transform hover:scale-105"
+                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 <PhoneIcon className="h-5 w-5" /> Call Now
               </a>
