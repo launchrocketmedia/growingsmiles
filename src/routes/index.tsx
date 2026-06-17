@@ -279,12 +279,12 @@ function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <Reveal>
-              <div className="relative mx-auto max-w-sm pb-14 sm:pb-16">
+              <div className="relative mx-auto max-w-sm pb-20 sm:pb-24">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
-                <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
+                <div className="relative animate-float overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card" style={{ animationDuration: "6s" }}>
                   <img src={drJyotiClinic} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
                 </div>
-                <div className="absolute -bottom-2 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
+                <div className="absolute -bottom-7 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
                   {[
                     { n: 10, s: "+", l: "Years of Care", d: 0 },
                     { n: 5000, s: "+", l: "Happy Smiles", d: 0 },
