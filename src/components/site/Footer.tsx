@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="relative mt-20 overflow-hidden bg-[image:var(--gradient-footer)] text-white">
       <div className="pointer-events-none absolute -top-10 left-1/2 h-40 w-[140%] -translate-x-1/2 rounded-[100%] bg-white/10 blur-2xl" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
+      <Reveal className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div>
           <img
