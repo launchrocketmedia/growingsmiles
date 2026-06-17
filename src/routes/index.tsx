@@ -254,6 +254,9 @@ function Home() {
                 alt="Dr. Jyoti Magoo, Pediatric Dentist at Growing Smiles"
                 className="relative z-10 mx-auto w-full max-w-sm drop-shadow-2xl lg:max-w-md"
                 fetchPriority="high"
+                decoding="async"
+                width={824}
+                height={1100}
               />
               <div className="glass absolute -bottom-3 left-0 z-20 flex animate-float items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-left-2" style={{ animationDuration: "6s" }}>
                 <Star className="h-5 w-5 fill-yellow text-yellow" />
