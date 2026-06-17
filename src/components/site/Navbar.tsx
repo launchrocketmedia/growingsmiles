@@ -92,7 +92,8 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="rounded-full bg-[image:var(--gradient-primary)] px-6 py-2.5 text-sm font-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-float"
+            className="animate-float rounded-full bg-[image:var(--gradient-primary)] px-6 py-2.5 text-sm font-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-float"
+            style={{ animationDuration: "5s" }}
           >
             Book Appointment
           </Link>
