@@ -35,11 +35,11 @@ import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { CloudField } from "@/components/site/Clouds";
 import { BRAND, waLink } from "@/lib/brand";
-import drJyoti from "@/assets/dr-jyoti.png.asset.json";
-import drJyotiClinic from "@/assets/dr-jyoti-clinic.png.asset.json";
-import fearFree from "@/assets/fear-free.png.asset.json";
-import childCare from "@/assets/child-care.png.asset.json";
-import community from "@/assets/community.png.asset.json";
+import drJyoti from "@/assets/dr-jyoti.webp";
+import drJyotiClinic from "@/assets/dr-jyoti-clinic.webp";
+import fearFree from "@/assets/fear-free.webp";
+import childCare from "@/assets/child-care.webp";
+import community from "@/assets/community.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
