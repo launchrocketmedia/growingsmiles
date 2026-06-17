@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import footerLogo from "@/assets/footer-logo.webp";
 import { BRAND, NAV_LINKS } from "@/lib/brand";
+import { Reveal } from "@/components/site/Reveal";
 
 export function Footer() {
   return (
