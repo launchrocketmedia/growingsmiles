@@ -35,11 +35,11 @@ import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { CloudField } from "@/components/site/Clouds";
 import { BRAND, waLink } from "@/lib/brand";
-import drJyoti from "@/assets/dr-jyoti.png.asset.json";
-import drJyotiClinic from "@/assets/dr-jyoti-clinic.png.asset.json";
-import fearFree from "@/assets/fear-free.png.asset.json";
-import childCare from "@/assets/child-care.png.asset.json";
-import community from "@/assets/community.png.asset.json";
+import drJyoti from "@/assets/dr-jyoti.webp";
+import drJyotiClinic from "@/assets/dr-jyoti-clinic.webp";
+import fearFree from "@/assets/fear-free.webp";
+import childCare from "@/assets/child-care.webp";
+import community from "@/assets/community.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +55,10 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Expert, fear-free pediatric dental care for healthy, confident smiles in Powai, Mumbai.",
       },
-      { property: "og:image", content: drJyoti.url },
+      { property: "og:image", content: drJyoti },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: drJyoti, fetchpriority: "high" },
     ],
     scripts: [
       {
@@ -247,10 +250,13 @@ function Home() {
               <div className="absolute left-1/2 top-6 h-[88%] w-[88%] -translate-x-1/2 rounded-[50%] bg-[image:var(--gradient-primary)] opacity-25 blur-2xl" />
               <div className="absolute left-1/2 bottom-0 h-[78%] w-[78%] -translate-x-1/2 rounded-t-[50%] bg-baby/60" />
               <img
-                src={drJyoti.url}
+                src={drJyoti}
                 alt="Dr. Jyoti Magoo, Pediatric Dentist at Growing Smiles"
                 className="relative z-10 mx-auto w-full max-w-sm drop-shadow-2xl lg:max-w-md"
                 fetchPriority="high"
+                decoding="async"
+                width={824}
+                height={1100}
               />
               <div className="glass absolute -bottom-3 left-0 z-20 flex animate-float items-center gap-2 rounded-2xl px-4 py-3 shadow-card sm:-left-2" style={{ animationDuration: "6s" }}>
                 <Star className="h-5 w-5 fill-yellow text-yellow" />
@@ -276,7 +282,7 @@ function Home() {
               <div className="relative mx-auto max-w-sm pb-14 sm:pb-16">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
                 <div className="relative overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card">
-                  <img src={drJyotiClinic.url} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full animate-float" style={{ animationDuration: "6s" }} />
+                  <img src={drJyotiClinic} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
                 </div>
                 <div className="absolute -bottom-2 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
                   {[
@@ -325,7 +331,7 @@ function Home() {
       {/* FEAR-FREE */}
       <section className="py-16 sm:py-20">
         <StoryRow
-          img={fearFree.url}
+          img={fearFree}
           alt="Dr. Jyoti gently helping a toddler feel comfortable at the dentist"
           eyebrow="Fear-Free Dentistry"
           title="Making Every Dental Visit Comfortable and Fun"
@@ -346,7 +352,7 @@ function Home() {
       {/* CHILD-CENTERED */}
       <section className="py-16 sm:py-20">
         <StoryRow
-          img={childCare.url}
+          img={childCare}
           alt="Dr. Jyoti engaging warmly with a young child"
           eyebrow="Child-Centered Care"
           title="Creating Positive Dental Experiences for Every Child"
@@ -367,7 +373,7 @@ function Home() {
       {/* COMMUNITY */}
       <section className="py-16 sm:py-20">
         <StoryRow
-          img={community.url}
+          img={community}
           alt="Dr. Jyoti with a group of happy children at Growing Smiles"
           eyebrow="Community & Happy Smiles"
           title="A Place Where Little Smiles Grow With Confidence"

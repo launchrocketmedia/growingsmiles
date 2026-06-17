@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoNavy from "@/assets/logo-navy.png.asset.json";
+import logoNavy from "@/assets/logo-navy.webp";
 import { NAV_LINKS } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
@@ -66,7 +66,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Growing Smiles home">
-          <img src={logoNavy.url} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
+          <img src={logoNavy} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -92,7 +92,8 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="rounded-full bg-[image:var(--gradient-primary)] px-6 py-2.5 text-sm font-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-float"
+            className="animate-float rounded-full bg-[image:var(--gradient-primary)] px-6 py-2.5 text-sm font-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-float"
+            style={{ animationDuration: "5s" }}
           >
             Book Appointment
           </Link>
@@ -115,7 +116,7 @@ export function Navbar() {
         )}
       >
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <img src={logoNavy.url} alt="Growing Smiles" className="h-9 w-auto" />
+          <img src={logoNavy} alt="Growing Smiles" className="h-9 w-auto" />
           <button
             onClick={() => setOpen(false)}
             className="rounded-full p-2 text-navy"
