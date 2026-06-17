@@ -64,7 +64,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-      </div>
+      </Reveal>
 
       <div className="relative border-t border-white/15 px-5 py-6 sm:px-6">
         <p className="mx-auto max-w-7xl text-center text-xs font-medium tracking-wide text-white/70">
