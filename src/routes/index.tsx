@@ -57,6 +57,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:image", content: drJyoti },
     ],
+    links: [
+      { rel: "preload", as: "image", href: drJyoti, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
