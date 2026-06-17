@@ -342,7 +342,7 @@ function Contact() {
       {/* WhatsApp CTA */}
       <section className="px-5 pb-4 sm:px-6">
         <Reveal className="mx-auto max-w-5xl">
-          <div className="relative animate-float overflow-hidden rounded-[2.5rem] bg-green px-6 py-14 text-center text-white shadow-float sm:px-12" style={{ animationDuration: "6s" }}>
+          <div className="relative animate-float overflow-hidden rounded-[2.5rem] bg-green px-6 py-14 text-center text-white shadow-float transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-float sm:px-12" style={{ animationDuration: "6s" }}>
             <div className="pointer-events-none absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
             <h2 className="relative text-3xl font-bold sm:text-4xl">Chat With Us On WhatsApp</h2>
             <p className="relative mx-auto mt-3 max-w-xl text-white/90">

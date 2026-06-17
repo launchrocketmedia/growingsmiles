@@ -2,13 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import footerLogo from "@/assets/footer-logo.webp";
 import { BRAND, NAV_LINKS } from "@/lib/brand";
+import { Reveal } from "@/components/site/Reveal";
 
 export function Footer() {
   return (
     <footer className="relative mt-20 overflow-hidden bg-[image:var(--gradient-footer)] text-white">
       <div className="pointer-events-none absolute -top-10 left-1/2 h-40 w-[140%] -translate-x-1/2 rounded-[100%] bg-white/10 blur-2xl" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
+      <Reveal className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div>
           <img
@@ -63,7 +64,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-      </div>
+      </Reveal>
 
       <div className="relative border-t border-white/15 px-5 py-6 sm:px-6">
         <p className="mx-auto max-w-7xl text-center text-xs font-medium tracking-wide text-white/70">
