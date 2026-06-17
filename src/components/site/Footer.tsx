@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
-import footerLogo from "@/assets/footer-logo.png.asset.json";
+import footerLogo from "@/assets/footer-logo.webp";
 import { BRAND, NAV_LINKS } from "@/lib/brand";
 
 export function Footer() {
@@ -12,7 +12,7 @@ export function Footer() {
         {/* Brand */}
         <div>
           <img
-            src={footerLogo.url}
+            src={footerLogo}
             alt="Growing Smiles pediatric dentistry logo"
             className="h-28 w-auto drop-shadow-lg sm:h-32"
           />
