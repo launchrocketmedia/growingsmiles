@@ -142,6 +142,7 @@ function Contact() {
       setDate(undefined);
       setTime("");
       setErrors({});
+      setDirty(false);
       toast.success("Thank you! We'll reach out shortly to confirm your appointment.");
     }, 700);
   };
