@@ -76,14 +76,14 @@ export function Navbar() {
               to={l.to}
               hash={l.hash || undefined}
               onClick={(e) => handleNav(e, l.to, l.hash)}
-              className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+              className="text-sm font-semibold text-navy/80 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
             >
               {l.label}
             </Link>
           ))}
           <Link
             to="/contact"
-            className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+            className="text-sm font-semibold text-navy/80 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
           >
             Contact
           </Link>
@@ -132,7 +132,7 @@ export function Navbar() {
               to={l.to}
               hash={l.hash || undefined}
               onClick={(e) => handleNav(e, l.to, l.hash)}
-              className="text-2xl font-bold text-navy"
+              className="text-2xl font-bold text-navy transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               {l.label}
@@ -141,14 +141,14 @@ export function Navbar() {
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
-            className="text-2xl font-bold text-navy"
+            className="text-2xl font-bold text-navy transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
           >
             Contact
           </Link>
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
-            className="mt-4 rounded-full bg-[image:var(--gradient-primary)] px-8 py-3.5 text-lg font-bold text-white shadow-float"
+            className="mt-4 rounded-full bg-[image:var(--gradient-primary)] px-8 py-3.5 text-lg font-bold text-white shadow-float transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-float"
           >
             Book Appointment
           </Link>
