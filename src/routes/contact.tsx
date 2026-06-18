@@ -88,6 +88,22 @@ function Contact() {
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [dirty, setDirty] = useState(false);
+
+  // Desktop only: warn before leaving when the form has unsaved input.
+  useEffect(() => {
+    const isDesktop =
+      typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 1024px)").matches &&
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!dirty || !isDesktop) return;
+    const handler = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, [dirty]);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
