@@ -177,6 +177,7 @@ function Contact() {
           <Reveal>
             <form
               onSubmit={onSubmit}
+              onInput={() => setDirty(true)}
               noValidate
               className="rounded-[2rem] bg-card p-6 shadow-card sm:p-8"
             >
