@@ -276,7 +276,7 @@ function Home() {
 
       {/* ABOUT */}
       <section id="about" className="scroll-mt-24 py-16 sm:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-6 sm:gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <Reveal>
               <div className="relative mx-auto max-w-sm pb-24 sm:pb-28">
@@ -630,7 +630,7 @@ function Home() {
                 <AccordionItem
                   key={i}
                   value={`item-${i}`}
-                  className="overflow-hidden rounded-2xl border-none bg-card px-5 shadow-soft"
+                  className="overflow-hidden rounded-2xl border-none bg-card px-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-float"
                 >
                   <AccordionTrigger className="py-5 text-left text-base font-bold text-navy hover:no-underline">
                     {f.q}
