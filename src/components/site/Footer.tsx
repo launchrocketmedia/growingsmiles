@@ -12,11 +12,13 @@ export function Footer() {
       <Reveal className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div>
-          <img
-            src={footerLogo}
-            alt="Growing Smiles pediatric dentistry logo"
-            className="h-28 w-auto drop-shadow-lg sm:h-32"
-          />
+          <Link to="/">
+            <img
+              src={footerLogo}
+              alt="Growing Smiles pediatric dentistry logo"
+              className="h-28 w-auto drop-shadow-lg sm:h-32"
+            />
+          </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
             Expert, fear-free pediatric dental care in a warm, welcoming environment in Powai,
             Mumbai — where every little smile grows with confidence.
