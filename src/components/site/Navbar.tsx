@@ -76,14 +76,14 @@ export function Navbar() {
               to={l.to}
               hash={l.hash || undefined}
               onClick={(e) => handleNav(e, l.to, l.hash)}
-              className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+              className="text-sm font-semibold text-navy/80 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
             >
               {l.label}
             </Link>
           ))}
           <Link
             to="/contact"
-            className="text-sm font-semibold text-navy/80 transition-colors hover:text-primary"
+            className="text-sm font-semibold text-navy/80 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-primary"
           >
             Contact
           </Link>
