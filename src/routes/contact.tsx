@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Clock, Send, CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
@@ -88,6 +88,22 @@ function Contact() {
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [dirty, setDirty] = useState(false);
+
+  // Desktop only: warn before leaving when the form has unsaved input.
+  useEffect(() => {
+    const isDesktop =
+      typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 1024px)").matches &&
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!dirty || !isDesktop) return;
+    const handler = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handler);
+    return () => window.removeEventListener("beforeunload", handler);
+  }, [dirty]);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -126,6 +142,7 @@ function Contact() {
       setDate(undefined);
       setTime("");
       setErrors({});
+      setDirty(false);
       toast.success("Thank you! We'll reach out shortly to confirm your appointment.");
     }, 700);
   };
@@ -160,6 +177,7 @@ function Contact() {
           <Reveal>
             <form
               onSubmit={onSubmit}
+              onInput={() => setDirty(true)}
               noValidate
               className="rounded-[2rem] bg-card p-6 shadow-card sm:p-8"
             >

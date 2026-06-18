@@ -279,12 +279,12 @@ function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <Reveal>
-              <div className="relative mx-auto max-w-sm pb-20 sm:pb-24">
+              <div className="relative mx-auto max-w-sm pb-24 sm:pb-28">
                 <div className="absolute inset-0 rounded-[2.5rem] bg-[image:var(--gradient-primary)] opacity-20 blur-2xl" />
                 <div className="relative animate-float overflow-hidden rounded-[2.5rem] bg-[image:var(--gradient-sky)] shadow-card" style={{ animationDuration: "6s" }}>
                   <img src={drJyotiClinic} alt="Dr. Jyoti Magoo at Growing Smiles clinic" loading="lazy" className="mx-auto w-full" />
                 </div>
-                <div className="absolute -bottom-7 left-3 right-3 z-20 grid grid-cols-3 gap-2 sm:left-4 sm:right-4 sm:gap-3">
+                <div className="absolute -bottom-8 left-2 right-2 z-20 grid grid-cols-3 gap-2.5 sm:left-4 sm:right-4 sm:gap-3">
                   {[
                     { n: 10, s: "+", l: "Years of Care", d: 0 },
                     { n: 5000, s: "+", l: "Happy Smiles", d: 0 },
@@ -656,16 +656,16 @@ function Home() {
             <p className="relative mx-auto mt-3 max-w-xl text-white/90">
               Book your child's appointment today and give them a gentle, fear-free dental experience.
             </p>
-            <div className="relative mt-7 flex flex-wrap justify-center gap-3">
+            <div className="relative mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 to="/contact"
-                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
+                className="flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 Book Appointment
               </Link>
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
+                className="flex items-center justify-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 <PhoneIcon className="h-5 w-5" /> Call Now
               </a>
