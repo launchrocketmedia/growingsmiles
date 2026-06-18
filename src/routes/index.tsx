@@ -656,16 +656,16 @@ function Home() {
             <p className="relative mx-auto mt-3 max-w-xl text-white/90">
               Book your child's appointment today and give them a gentle, fear-free dental experience.
             </p>
-            <div className="relative mt-7 flex flex-wrap justify-center gap-3">
+            <div className="relative mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 to="/contact"
-                className="rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
+                className="flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-base font-bold text-navy shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 Book Appointment
               </Link>
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
+                className="flex items-center justify-center gap-2 rounded-full bg-navy/30 px-7 py-3.5 text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-float"
               >
                 <PhoneIcon className="h-5 w-5" /> Call Now
               </a>
