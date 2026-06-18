@@ -29,7 +29,14 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-white/70">
             <li className="flex gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-              <span>{BRAND.address}</span>
+              <a
+                href="https://www.google.com/maps/place/Growing+Smiles,+Pediatric+Dentistry+by+Dr+Jyoti+Magoo/@19.1142131,72.8993173,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c7857cd17fa1:0x17f097ae1420671!8m2!3d19.1142131!4d72.8993173!16s%2Fg%2F11vt5dh_yk?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                {BRAND.address}
+              </a>
             </li>
             <li className="flex gap-2.5">
               <Phone className="h-4 w-4 shrink-0" />
