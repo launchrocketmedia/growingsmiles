@@ -388,8 +388,8 @@ function Home() {
               { n: 5000, s: "+", l: "Smiles Created" },
               { n: 98, s: "%", l: "Happy Families" },
               { n: 180, s: "+", l: "5-Star Reviews" },
-            ].map((stat) => (
-              <div key={stat.l} className="rounded-2xl bg-card p-3 text-center shadow-soft">
+            ].map((stat, i) => (
+              <div key={stat.l} className="animate-float rounded-2xl bg-card p-3 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-float" style={{ animationDelay: `${i * 0.5}s`, animationDuration: "6s" }}>
                 <p className="text-xl font-extrabold text-primary sm:text-2xl">
                   <Counter to={stat.n} />
                   {stat.s}
