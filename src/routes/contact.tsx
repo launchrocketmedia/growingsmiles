@@ -76,8 +76,17 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
+const GOOGLE_PROFILE_URL =
+  "https://www.google.com/maps/place/Growing+Smiles,+Pediatric+Dentistry+by+Dr+Jyoti+Magoo/@19.1142131,72.8993173,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c7857cd17fa1:0x17f097ae1420671!8m2!3d19.1142131!4d72.8993173!16s%2Fg%2F11vt5dh_yk?entry=ttu";
+
 const INFO = [
-  { icon: MapPin, label: "Visit Us", value: BRAND.address },
+  {
+    icon: MapPin,
+    label: "Visit Us",
+    value: BRAND.address,
+    href: GOOGLE_PROFILE_URL,
+    external: true,
+  },
   { icon: Phone, label: "Call Us", value: BRAND.phoneDisplay, href: `tel:${BRAND.phone}` },
   { icon: Mail, label: "Email Us", value: BRAND.email, href: `mailto:${BRAND.email}` },
   { icon: Clock, label: "Hours", value: BRAND.hours },
