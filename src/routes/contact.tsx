@@ -228,14 +228,12 @@ function Contact() {
                   type="tel"
                   required
                   error={errors.phone}
-                  placeholder="+91 9876543210"
                 />
                 <Field
                   label="Email"
                   name="email"
                   type="email"
                   error={errors.email}
-                  placeholder="contact@domain.com"
                 />
 
                 {/* Preferred Date */}
