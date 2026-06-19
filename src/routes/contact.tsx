@@ -369,7 +369,12 @@ function Contact() {
                     {i.label}
                   </p>
                   {i.href ? (
-                    <a href={i.href} className="mt-1 block text-sm font-medium text-navy/80 hover:text-primary">
+                    <a
+                      href={i.href}
+                      target={i.external ? "_blank" : undefined}
+                      rel={i.external ? "noopener noreferrer" : undefined}
+                      className="mt-1 block text-sm font-medium text-navy/80 hover:text-primary"
+                    >
                       {i.value}
                     </a>
                   ) : (
