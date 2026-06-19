@@ -76,8 +76,17 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
+const GOOGLE_PROFILE_URL =
+  "https://www.google.com/maps/place/Growing+Smiles,+Pediatric+Dentistry+by+Dr+Jyoti+Magoo/@19.1142131,72.8993173,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c7857cd17fa1:0x17f097ae1420671!8m2!3d19.1142131!4d72.8993173!16s%2Fg%2F11vt5dh_yk?entry=ttu";
+
 const INFO = [
-  { icon: MapPin, label: "Visit Us", value: BRAND.address },
+  {
+    icon: MapPin,
+    label: "Visit Us",
+    value: BRAND.address,
+    href: GOOGLE_PROFILE_URL,
+    external: true,
+  },
   { icon: Phone, label: "Call Us", value: BRAND.phoneDisplay, href: `tel:${BRAND.phone}` },
   { icon: Mail, label: "Email Us", value: BRAND.email, href: `mailto:${BRAND.email}` },
   { icon: Clock, label: "Hours", value: BRAND.hours },
@@ -136,6 +145,26 @@ function Contact() {
     }
 
     setSubmitting(true);
+
+    // Send the appointment details to the clinic's WhatsApp.
+    const parentName = String(data.get("parentName") || "");
+    const childName = String(data.get("childName") || "");
+    const reason = String(data.get("reason") || "");
+    const notes = String(data.get("message") || "");
+    const message = [
+      "*New Appointment Request — Growing Smiles*",
+      `Parent: ${parentName}`,
+      `Child: ${childName}`,
+      `Phone: ${phone}`,
+      email ? `Email: ${email}` : null,
+      reason ? `Reason: ${reason}` : null,
+      date ? `Preferred Date: ${format(date, "EEE, MMM d, yyyy")}` : null,
+      `Preferred Time: ${time}`,
+      notes ? `Notes: ${notes}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     setTimeout(() => {
       setSubmitting(false);
       form.reset();
@@ -143,7 +172,12 @@ function Contact() {
       setTime("");
       setErrors({});
       setDirty(false);
-      toast.success("Thank you! We'll reach out shortly to confirm your appointment.");
+      toast.success("Thank you! Opening WhatsApp to confirm your appointment.");
+      window.open(
+        `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(message)}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
     }, 700);
   };
 
@@ -335,7 +369,12 @@ function Contact() {
                     {i.label}
                   </p>
                   {i.href ? (
-                    <a href={i.href} className="mt-1 block text-sm font-medium text-navy/80 hover:text-primary">
+                    <a
+                      href={i.href}
+                      target={i.external ? "_blank" : undefined}
+                      rel={i.external ? "noopener noreferrer" : undefined}
+                      className="mt-1 block text-sm font-medium text-navy/80 hover:text-primary"
+                    >
                       {i.value}
                     </a>
                   ) : (

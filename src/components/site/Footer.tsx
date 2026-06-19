@@ -12,7 +12,10 @@ export function Footer() {
       <Reveal className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div>
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <img
               src={footerLogo}
               alt="Growing Smiles pediatric dentistry logo"
