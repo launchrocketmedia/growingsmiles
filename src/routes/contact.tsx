@@ -150,6 +150,7 @@ function Contact() {
     const parentName = String(data.get("parentName") || "");
     const childName = String(data.get("childName") || "");
     const reason = String(data.get("reason") || "");
+    const notes = String(data.get("message") || "");
     const message = [
       "*New Appointment Request — Growing Smiles*",
       `Parent: ${parentName}`,
