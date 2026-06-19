@@ -289,8 +289,8 @@ function Home() {
                     { n: 10, s: "+", l: "Years of Care", d: 0 },
                     { n: 5000, s: "+", l: "Happy Smiles", d: 0 },
                     { n: 4.9, s: "★", l: "Avg. Rating", d: 1 },
-                  ].map((stat) => (
-                    <div key={stat.l} className="rounded-xl bg-white/95 p-2 text-center shadow-card backdrop-blur-sm sm:p-3">
+                  ].map((stat, i) => (
+                    <div key={stat.l} className="animate-float rounded-xl bg-white/95 p-2 text-center shadow-card backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-float sm:p-3" style={{ animationDelay: `${i * 0.5}s`, animationDuration: "6s" }}>
                       <p className="text-lg font-extrabold text-primary sm:text-2xl">
                         <Counter to={stat.n} decimals={stat.d} />
                         {stat.s}
