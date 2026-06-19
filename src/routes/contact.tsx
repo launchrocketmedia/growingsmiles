@@ -160,6 +160,7 @@ function Contact() {
       reason ? `Reason: ${reason}` : null,
       date ? `Preferred Date: ${format(date, "EEE, MMM d, yyyy")}` : null,
       `Preferred Time: ${time}`,
+      notes ? `Notes: ${notes}` : null,
     ]
       .filter(Boolean)
       .join("\n");
