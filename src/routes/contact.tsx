@@ -145,6 +145,24 @@ function Contact() {
     }
 
     setSubmitting(true);
+
+    // Send the appointment details to the clinic's WhatsApp.
+    const parentName = String(data.get("parentName") || "");
+    const childName = String(data.get("childName") || "");
+    const reason = String(data.get("reason") || "");
+    const message = [
+      "*New Appointment Request — Growing Smiles*",
+      `Parent: ${parentName}`,
+      `Child: ${childName}`,
+      `Phone: ${phone}`,
+      email ? `Email: ${email}` : null,
+      reason ? `Reason: ${reason}` : null,
+      date ? `Preferred Date: ${format(date, "EEE, MMM d, yyyy")}` : null,
+      `Preferred Time: ${time}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     setTimeout(() => {
       setSubmitting(false);
       form.reset();
@@ -152,7 +170,12 @@ function Contact() {
       setTime("");
       setErrors({});
       setDirty(false);
-      toast.success("Thank you! We'll reach out shortly to confirm your appointment.");
+      toast.success("Thank you! Opening WhatsApp to confirm your appointment.");
+      window.open(
+        `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(message)}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
     }, 700);
   };
 
