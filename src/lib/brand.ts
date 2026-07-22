@@ -5,7 +5,7 @@ export const BRAND = {
   phoneDisplay: "+91 93246 06474",
   phone: "+919324606474",
   whatsapp: "919324606474",
-  email: "hello@growingsmiles.com",
+  email: "launchrocket@proton.me",
   address:
     "Unit 220, Lake Primrose Commercial Complex, Panch Shrishti Complex Road, MHADA Colony 20, Powai, Mumbai, Maharashtra 400072",
   hours: "Monday – Saturday, 10:00 AM – 7:00 PM",

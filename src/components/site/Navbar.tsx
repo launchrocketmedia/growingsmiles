@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoNavy from "@/assets/logo-navy.webp";
 import { NAV_LINKS } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
@@ -76,7 +75,15 @@ export function Navbar() {
             }
           }}
         >
-          <img src={logoNavy} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
+          <span
+            className="font-display text-2xl font-extrabold tracking-tight text-navy sm:text-3xl"
+            style={{
+              textShadow:
+                "0 0 12px oklch(0.7 0.14 235 / 0.55), 0 0 28px oklch(0.74 0.1 195 / 0.35), 0 1px 0 oklch(1 0 0 / 0.6)",
+            }}
+          >
+            Growing Smiles
+          </span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -126,7 +133,15 @@ export function Navbar() {
         )}
       >
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <img src={logoNavy} alt="Growing Smiles" className="h-9 w-auto" />
+          <span
+            className="font-display text-xl font-extrabold tracking-tight text-navy"
+            style={{
+              textShadow:
+                "0 0 10px oklch(0.7 0.14 235 / 0.5), 0 0 20px oklch(0.74 0.1 195 / 0.3)",
+            }}
+          >
+            Growing Smiles
+          </span>
           <button
             onClick={() => setOpen(false)}
             className="rounded-full p-2 text-navy"
