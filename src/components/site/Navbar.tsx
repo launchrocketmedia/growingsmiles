@@ -75,7 +75,15 @@ export function Navbar() {
             }
           }}
         >
-          <img src={logoNavy} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
+          <span
+            className="font-display text-2xl font-extrabold tracking-tight text-navy sm:text-3xl"
+            style={{
+              textShadow:
+                "0 0 12px oklch(0.7 0.14 235 / 0.55), 0 0 28px oklch(0.74 0.1 195 / 0.35), 0 1px 0 oklch(1 0 0 / 0.6)",
+            }}
+          >
+            Growing Smiles
+          </span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
