@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logoNavy from "@/assets/logo-navy.webp";
 import { NAV_LINKS } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
