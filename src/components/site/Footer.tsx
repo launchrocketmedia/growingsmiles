@@ -82,13 +82,14 @@ export function Footer() {
         <p className="mx-auto max-w-7xl text-center text-xs font-medium tracking-wide text-white/70">
           © 2026 Growing Smiles. All Rights Reserved.
           <br className="sm:hidden" />{" "}
+          Built By{" "}
           <a
             href="https://launchrocket.lovable.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-white"
+            className="font-semibold text-white transition-colors hover:text-white/80"
           >
-            Built By <span className="font-semibold text-white">Launch Rocket</span>
+            Launch Rocket
           </a>
           .
         </p>
