@@ -630,7 +630,35 @@ function Home() {
             <h2 className="mt-4 text-3xl font-bold text-navy sm:text-4xl">Questions Parents Ask</h2>
           </Reveal>
           <Reveal delay={100}>
-            <Accordion type="single" collapsible className="mt-10 space-y-3">
+            <Accordion
+              type="single"
+              collapsible
+              className="mt-10 space-y-3"
+              onValueChange={(v) => {
+                if (!v) return;
+                try {
+                  const AC =
+                    window.AudioContext ||
+                    (window as unknown as { webkitAudioContext: typeof AudioContext })
+                      .webkitAudioContext;
+                  const ctx = new AC();
+                  const o = ctx.createOscillator();
+                  const g = ctx.createGain();
+                  o.type = "sine";
+                  o.frequency.setValueAtTime(320, ctx.currentTime);
+                  o.frequency.exponentialRampToValueAtTime(760, ctx.currentTime + 0.18);
+                  g.gain.setValueAtTime(0.0001, ctx.currentTime);
+                  g.gain.exponentialRampToValueAtTime(0.22, ctx.currentTime + 0.03);
+                  g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.28);
+                  o.connect(g).connect(ctx.destination);
+                  o.start();
+                  o.stop(ctx.currentTime + 0.3);
+                  setTimeout(() => ctx.close(), 400);
+                } catch {
+                  /* noop */
+                }
+              }}
+            >
               {FAQS.map((f, i) => (
                 <AccordionItem
                   key={i}
