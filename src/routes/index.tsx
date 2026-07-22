@@ -138,7 +138,7 @@ const REVIEWS = [
   { name: "Ananya B.", text: "The clinic feels like a mini wonderland. My son asks when the next dentist visit is — never thought I'd hear that!", stars: 5 },
   { name: "Rohan G.", text: "Very transparent about treatment options and pricing. Zero pressure, only genuine care. Highly recommended.", stars: 5 },
   { name: "Divya N.", text: "From reception to treatment, everything is world-class. Dr. Jyoti is truly the best pediatric dentist we've met.", stars: 5 },
-  { name: "Sameer H.", text: "Emergency chipped tooth on a Sunday — they guided us over the phone and saw us first thing Monday. Lifesavers.", stars: 5 },
+  
 ];
 
 const FAQS = [
