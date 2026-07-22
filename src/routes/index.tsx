@@ -134,6 +134,11 @@ const REVIEWS = [
   { name: "Sneha P.", text: "My twins were nervous at first, but the friendly staff and Dr. Jyoti put them completely at ease. Fantastic care.", stars: 5 },
   { name: "Arjun T.", text: "Spotless clinic, modern equipment and a doctor who genuinely loves working with kids. Couldn't ask for more.", stars: 5 },
   { name: "Meera R.", text: "We drive across the city for our daughter's appointments — it's that worth it. Gentle, thorough and caring.", stars: 5 },
+  { name: "Karan V.", text: "Dr. Jyoti's calm energy instantly relaxed our anxious 4-year-old. First cavity filling done without a single tear!", stars: 5 },
+  { name: "Ananya B.", text: "The clinic feels like a mini wonderland. My son asks when the next dentist visit is — never thought I'd hear that!", stars: 5 },
+  { name: "Rohan G.", text: "Very transparent about treatment options and pricing. Zero pressure, only genuine care. Highly recommended.", stars: 5 },
+  { name: "Divya N.", text: "From reception to treatment, everything is world-class. Dr. Jyoti is truly the best pediatric dentist we've met.", stars: 5 },
+  { name: "Sameer H.", text: "Emergency chipped tooth on a Sunday — they guided us over the phone and saw us first thing Monday. Lifesavers.", stars: 5 },
 ];
 
 const FAQS = [

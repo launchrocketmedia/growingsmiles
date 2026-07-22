@@ -65,7 +65,17 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="Growing Smiles home">
+        <Link
+          to="/"
+          className="flex shrink-0 items-center"
+          aria-label="Growing Smiles home"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <img src={logoNavy} alt="Growing Smiles" className="h-11 w-auto sm:h-14" />
         </Link>
 

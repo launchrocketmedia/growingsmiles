@@ -83,10 +83,12 @@ export function Footer() {
           © 2026 Growing Smiles. All Rights Reserved.
           <br className="sm:hidden" />{" "}
           <a
-            href="mailto:get.ayushdesigns@gmail.com"
+            href="https://launchrocket.lovable.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-colors hover:text-white"
           >
-            Built By <span className="font-semibold text-white">Ayush</span>
+            Built By <span className="font-semibold text-white">Launch Rocket</span>
           </a>
           .
         </p>
